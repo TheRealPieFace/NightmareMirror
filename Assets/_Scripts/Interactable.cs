@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
         Toggle
     }
 
-    [SerializeField] Hazard hazard;
+    [SerializeField] List<Hazard> hazards;
     [SerializeField] Interaction interactionType = Interaction.Trigger;
     private bool inRange = false;
 
@@ -18,7 +18,11 @@ public class Interactable : MonoBehaviour
     {
         if(inRange && Input.GetKeyDown(KeyCode.E))
         {
-            hazard.InteractActivate();
+            foreach(var hazard in hazards)
+            {
+                hazard.InteractActivate();
+            }
+            
         }
     }
 
@@ -34,7 +38,10 @@ public class Interactable : MonoBehaviour
             }
             else if (interactionType == Interaction.Trigger)
             {
-                hazard.TriggerActivate();
+                foreach (var hazard in hazards)
+                {
+                    hazard.InteractActivate();
+                }
             }
         }
     }
