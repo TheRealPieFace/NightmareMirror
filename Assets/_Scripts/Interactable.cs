@@ -22,11 +22,12 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player")
         {
-            if(interactionType == Interaction.Toggle)
+            if (interactionType == Interaction.Toggle)
             {
                 inRange = true;
                 //TODO ACTIVATE PROMPT
@@ -38,8 +39,9 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
             if (interactionType == Interaction.Toggle)
@@ -49,5 +51,6 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+    
 
 }

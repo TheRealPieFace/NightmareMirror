@@ -6,11 +6,11 @@ public class Hazard : MonoBehaviour
 {
     public void TriggerActivate()
     {
-        this.enabled = true;
+        this.gameObject.SetActive(true);
     }
 
     public void InteractActivate()
     {
-        this.enabled = !this.enabled;
+        this.gameObject.SetActive(!gameObject.activeSelf);
     }
 }
