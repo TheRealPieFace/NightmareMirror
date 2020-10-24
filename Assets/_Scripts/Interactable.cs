@@ -14,6 +14,14 @@ public class Interactable : MonoBehaviour
     [SerializeField] Interaction interactionType = Interaction.Trigger;
     private bool inRange = false;
 
+    private void Start()
+    {
+        if (gameObject.GetComponent<BoxCollider2D>() == null && gameObject.GetComponent<CircleCollider2D>() == null)
+        {
+            Debug.LogError($"{gameObject.name} is missing Collider");
+        }
+    }
+
     private void Update()
     {
         if(inRange && Input.GetKeyDown(KeyCode.E))
