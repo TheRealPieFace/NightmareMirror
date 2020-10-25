@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5267366521348277513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3435696774877798008}
+  - component: {fileID: 8944076983762987942}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3435696774877798008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267366521348277513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8944076983762987942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267366521348277513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee52a39caf69824ab6e08265f566241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme1
+    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme2
+    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme3
+    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BookAttack
+    clip: {fileID: 8300000, guid: c57e8f7b839c3454a8de63042827a171, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BookFlap
+    clip: {fileID: 8300000, guid: c571efe16a5c9774f8fb6d2adc63ff3a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Creak
+    clip: {fileID: 8300000, guid: cfafc8c3e28608043b89e38e7b722b6c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DemonSuc
+    clip: {fileID: 8300000, guid: 17044054ccd22d449b667ab8d03b469b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 6acb7acb98c0fe14eabebc5b2bce3176, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Mirror
+    clip: {fileID: 8300000, guid: 55a2af02faef0c240bfa40cb9b73620e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 5fd71a708e5b66d4f82e2efbccac02b7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 8848de9ddbbee9f408e901569a29c1f7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LightOn
+    clip: {fileID: 8300000, guid: d2066976e9181b0419e91f5700ccd174, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LightOff
+    clip: {fileID: 8300000, guid: 7591be8192afdd04db2f0b60052e1bdb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 1531cbc4640e13b418b61f43b92d64f6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MirrorBreak
+    clip: {fileID: 8300000, guid: d5704842e153b1440a3b2e871d54df9d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pumpkin
+    clip: {fileID: 8300000, guid: 4f566ce5260be7b45b47d9aa882aae95, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fall
+    clip: {fileID: 8300000, guid: cca8b2dc746ff554488658aa80c8d28e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpikeUp
+    clip: {fileID: 8300000, guid: c4c0b807629d5584d8dd8853d6ca7ce7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpikeDown
+    clip: {fileID: 8300000, guid: 0f46b67ca11d92140b42cae1a8383dab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fist
+    clip: {fileID: 8300000, guid: 876c561aecd90db43b62049d861d26ca, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

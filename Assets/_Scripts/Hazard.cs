@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
+
     public void TriggerActivate()
     {
         this.gameObject.SetActive(true);

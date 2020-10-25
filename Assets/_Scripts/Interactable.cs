@@ -36,7 +36,6 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
             if (interactionType == Interaction.Toggle)
@@ -48,7 +47,7 @@ public class Interactable : MonoBehaviour
             {
                 foreach (var hazard in hazards)
                 {
-                    hazard.InteractActivate();
+                    hazard.TriggerActivate();
                 }
             }
         }

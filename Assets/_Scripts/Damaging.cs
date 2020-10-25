@@ -14,13 +14,15 @@ public class Damaging : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log(damage + " Damage");
             //collision.gameObject.GetComponent(Player).DealDamage(damage);
         }
     }
+
 
 }
