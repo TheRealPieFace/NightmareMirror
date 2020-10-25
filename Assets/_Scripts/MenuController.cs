@@ -14,8 +14,7 @@ public class MenuController : MonoBehaviour
     public Button Quit;
     Animator myAnimator;
    
-    public GameObject StartMenu;
-    public GameObject ResumeMenu;
+   
 
 
 
