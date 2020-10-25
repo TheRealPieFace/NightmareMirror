@@ -45,19 +45,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme1
-    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    clip: {fileID: 8300000, guid: 47bd852d0de09c14888f4d2ffd5dd06f, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Theme2
-    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    clip: {fileID: 8300000, guid: 47bd852d0de09c14888f4d2ffd5dd06f, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Theme3
-    clip: {fileID: 8300000, guid: 03929282a0b61b943b7817e31291bf3f, type: 3}
+    clip: {fileID: 8300000, guid: 47bd852d0de09c14888f4d2ffd5dd06f, type: 3}
     volume: 1
     pitch: 1
     loop: 1
