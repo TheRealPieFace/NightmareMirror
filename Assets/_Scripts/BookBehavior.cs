@@ -60,6 +60,11 @@ public class BookBehavior : MonoBehaviour
 
     public void Turn()
     {
+        if (attacking)
+        {
+            attacking = false;
+            state = BookState.Returning;
+        }
         direction = direction * -1;
         anim.SetTrigger("Turn");
         StartCoroutine(Flip());

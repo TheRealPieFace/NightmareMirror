@@ -3,17 +3,22 @@
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D myRigidBody;
-    public float moveSpeed = 1f;
+    public float walkSpeed = 1f;
+    public float runSpeed = 5f;
+    private float moveSpeed;
     Animator myAnimator;
     Collider2D myCollider;
     public bool isGrounded = true;
     public float jumpSpeed = 5f;
+
+    private bool flipped = false;
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCollider = GetComponent<Collider2D>();
+        moveSpeed = walkSpeed;
     }
 
     // Update is called once per frame
@@ -38,15 +43,14 @@ public class PlayerMovement : MonoBehaviour
         //if the state of left shift is down run is true only when moving.
         if (Input.GetKey("left shift") == true & movement != 0)
         {
-            moveSpeed = 5f;
+            moveSpeed = runSpeed;
             myAnimator.SetBool("running", true);
-            print("space key was pressed");
         }
 
         //if left shift is up or player not moving, dont run.
         if (Input.GetKeyUp("left shift") == true || movement == 0)
         {
-            moveSpeed = 1f;
+            moveSpeed = walkSpeed;
             myAnimator.SetBool("running", false);
         }
 
@@ -79,12 +83,22 @@ public class PlayerMovement : MonoBehaviour
         //check and change direction of player
         if (movement < 0)//player is moving left.
         {
-            transform.localScale = new Vector2(1f, 1f);
+            if (flipped)
+            {
+                transform.localScale *= new Vector2(-1f, 1f);
+            }
+            else
+            {
+                transform.localScale *= new Vector2(1f, 1f);
+            }
+            
+            flipped = false;
         }
 
-        if (movement > 0)// player is moving right
+        if (movement > 0 && !flipped)// player is moving right
         {
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale *= new Vector2(-1f, 1f);
+            flipped = true;
         }
         
     }
