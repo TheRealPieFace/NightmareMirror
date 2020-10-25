@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
     public enum Interaction
     {
         Trigger,
-        Toggle
+        Toggle,
+        Interact
     }
 
     [SerializeField] List<Hazard> hazards;
     [SerializeField] Interaction interactionType = Interaction.Trigger;
     private bool inRange = false;
+    private GameObject prompt;
 
     private void Start()
     {
@@ -20,16 +23,29 @@ public class Interactable : MonoBehaviour
         {
             Debug.LogError($"{gameObject.name} is missing Collider");
         }
+
+        prompt = GameObject.FindGameObjectWithTag("Prompt");
     }
 
     private void Update()
     {
         if(inRange && Input.GetKeyDown(KeyCode.E))
         {
-            foreach(var hazard in hazards)
+            if (interactionType == Interaction.Toggle)
             {
-                hazard.InteractActivate();
+                foreach (var hazard in hazards)
+                {
+                    hazard.InteractActivate();
+                }
+            } 
+            else if (interactionType == Interaction.Interact)
+            {
+                foreach(var hazard in hazards)
+                {
+                    hazard.TriggerActivate();
+                }
             }
+            
             
         }
     }
@@ -38,10 +54,10 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (interactionType == Interaction.Toggle)
+            if (interactionType == Interaction.Toggle || interactionType == Interaction.Interact)
             {
                 inRange = true;
-                //TODO ACTIVATE PROMPT
+                prompt.GetComponent<Text>().enabled = true;
             }
             else if (interactionType == Interaction.Trigger)
             {
@@ -58,10 +74,10 @@ public class Interactable : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
-            if (interactionType == Interaction.Toggle)
+            if (interactionType == Interaction.Toggle || interactionType == Interaction.Interact)
             {
                 inRange = false;
-                //TODO DEACTIVATE PROMPT
+                prompt.GetComponent<Text>().enabled = false;
             }
         }
     }

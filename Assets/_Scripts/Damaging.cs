@@ -5,6 +5,7 @@ using UnityEngine;
 public class Damaging : MonoBehaviour
 {
     [SerializeField] int damage = 1;
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -12,6 +13,7 @@ public class Damaging : MonoBehaviour
         {
             Debug.LogError($"{gameObject.name} is missing Collider");
         }
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,8 +21,7 @@ public class Damaging : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log(damage + " Damage");
-            //collision.gameObject.GetComponent(Player).DealDamage(damage);
+            gameManager.TakeDamange(damage);
         }
     }
 

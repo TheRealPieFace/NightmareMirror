@@ -7,6 +7,8 @@ TagManager:
   - Pumpkin
   - Book
   - floor
+  - Prompt
+  - EndPrompt
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - 
   - floor
-  - 
-  - 
+  - shadeStopper
+  - Player
   - 
   - 
   - 
@@ -58,4 +60,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2571824301
+    locked: 0
+  - name: foreground
+    uniqueID: 851145099
     locked: 0

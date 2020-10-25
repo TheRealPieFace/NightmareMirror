@@ -81,7 +81,14 @@ public class PlayerMovement : MonoBehaviour
 
 
         //check and change direction of player
-        if (movement < 0)//player is moving left.
+        if (movement < 0 && !flipped)//player is moving left.
+        {
+
+            transform.localScale *= new Vector2(-1f, 1f);
+            flipped = true;
+        }
+
+        if (movement > 0)// player is moving right
         {
             if (flipped)
             {
@@ -91,14 +98,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.localScale *= new Vector2(1f, 1f);
             }
-            
-            flipped = false;
-        }
 
-        if (movement > 0 && !flipped)// player is moving right
-        {
-            transform.localScale *= new Vector2(-1f, 1f);
-            flipped = true;
+            flipped = false;
         }
         
     }

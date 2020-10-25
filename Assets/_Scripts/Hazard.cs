@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
+    private bool isActive = false;
 
     public void TriggerActivate()
     {
-        this.gameObject.SetActive(true);
+        if (!isActive)
+        {
+            this.gameObject.SetActive(!gameObject.activeSelf);
+            isActive = true;
+        }
+        
     }
 
     public void InteractActivate()

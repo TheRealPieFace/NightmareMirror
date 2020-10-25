@@ -5,6 +5,7 @@ using UnityEngine;
 public class PumpkinSoundPlayer : MonoBehaviour
 {
     AudioManager audioManager;
+    public bool inRange = false;
 
     private void Start()
     {
@@ -13,7 +14,7 @@ public class PumpkinSoundPlayer : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Pumpkin")
+        if(collision.gameObject.tag == "Pumpkin" && inRange)
         {
             audioManager.Play("Pumpkin");
         }
