@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class EndInteraction : MonoBehaviour
 {
     [SerializeField] Text prompt;
-    private bool inRange = false;
+    public bool inRange = false;
     public bool active = false;
     [SerializeField] GameObject endScreen;
 
@@ -15,8 +15,10 @@ public class EndInteraction : MonoBehaviour
     {
         if(inRange && Input.GetKeyDown(KeyCode.E))
         {
-            Time.timeScale = 0;
-            endScreen.SetActive(true);
+            SceneManager.LoadScene(1);
+            //Debug.Log("hit E");
+            //endScreen.SetActive(true);
+            //Time.timeScale = 0;
         }
     }
 
